@@ -1,0 +1,13 @@
+arrive,3,camry
+service,2,jetta 
+arrive,7,miata
+arrive,1,versa
+service,17,explorer
+sort,arrive
+print,arrive
+service,7,camry
+service,7,focus
+service,3,rio
+service,5,corrolla 
+arrive,7,prius
+arrive,8,pontiac
