@@ -7,7 +7,7 @@ import java.util.Collections;
 public class CarWashManager {    
   public static void main(String[] args) {
     handleQueue("carwash_details.txt");
-
+    
   }
 
   public static void handleQueue(String inFile) {
@@ -64,7 +64,7 @@ public class CarWashManager {
   }
 }
 
-class Car {
+class Car implements Comparable<Car>{
   private String model;
   private int priority;
     
@@ -111,6 +111,21 @@ class Car {
   public String toString() {
     return this.priority + " - " + model;
   }
+
+  @Override
+  public int compareTo(Car o) {
+    if (this.getPriority() > o.getPriority()) {
+        return -1;
+    } else if (this.getPriority() < o.getPriority()) {
+        return 1;
+    } else if (this.getModel().compareTo(o.getModel()) < 0) {
+        return -1;
+    } else if (this.getModel().compareTo(o.getModel()) > 0) {
+        return 1;
+    }
+    return 0;
+}
+
 }
 
 interface QueueOfCars  {

@@ -60,9 +60,7 @@ class LinkedList{
             Node searchNode = curr.next;
     
             while (searchNode != null) {
-                if (searchNode.carData.getPriority() > maxNode.carData.getPriority() ||
-                   (searchNode.carData.getPriority() == maxNode.carData.getPriority() &&
-                    searchNode.carData.getModel().compareTo(maxNode.carData.getModel()) < 0)) {
+                if (searchNode.carData.compareTo(maxNode.carData) < 0) { //Uses compare to method for comparing
                     maxNode = searchNode;
                 }
                 searchNode = searchNode.next;
