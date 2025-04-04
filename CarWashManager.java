@@ -7,7 +7,7 @@ import java.util.Collections;
 public class CarWashManager {    
   public static void main(String[] args) {
     handleQueue("carwash_details.txt");
-    
+
   }
 
   public static void handleQueue(String inFile) {

@@ -130,6 +130,10 @@ class CarQueueLinkedList implements QueueOfCars{
       }
       return result;
     }
+
+    public void add(Car car){
+      queue.add(car);
+    }
     
     public void sort() {
     queue.sort();
