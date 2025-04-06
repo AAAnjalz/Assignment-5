@@ -12,9 +12,10 @@ public class Test {
         cl.add(car);
         cl.add(car1);
         // System.out.println(cl.incrementCarPriority("ROver", 20));
-        System.out.println(cl.decrementCarPriority("ROver", 9));
-        System.out.println(cl);
+        // System.out.println(cl.decrementCarPriority("ROver", 9));
+        // System.out.println(cl);
         // ll.printList();
+        System.out.println(car);
         
     }
 }
