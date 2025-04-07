@@ -64,7 +64,9 @@ public class CaveExplorer {
                 // Mark the correct path with '.' if treasure is found
                 while (!path.isEmpty()) {
                     Location p = path.pop();
-                    layout[p.row()][p.col()] = '.';
+                    if(layout[p.row()][p.col()] != 'T'){
+                        layout[p.row()][p.col()] = '.';
+                    }
                 }
                 return true;
             }
@@ -73,7 +75,7 @@ public class CaveExplorer {
             if (layout[current.row()][current.col()] == ' ') {
                 layout[current.row()][current.col()] = 'X';  // Mark the path
             }
-
+            
             // Explore four directions (up, down, left, right)
             for (Location neighbor : getNeighbors(current)) {
                 if (isValidMove(layout, neighbor)) {

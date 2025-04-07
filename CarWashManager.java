@@ -361,12 +361,14 @@ interface QueueOfCars  {
 }
 
     public String toString() {
-    String result = "Here are the cars and their priority: ";
+    String result = "Here are the cars and their priority: \n";
     for (int i = 0; i < this.queue.size(); i++) {
-      result += this.queue.get(i);
-      if (i < this.queue.size() - 1){
-        result += "\n";
-      }
+      result += this.queue.get(i) + "\n";
+      // if (i < this.queue.size() - 1){
+      //   result += "\n";
+      // }
+      // result += "\n";
+  
     }
     return result;
   }
