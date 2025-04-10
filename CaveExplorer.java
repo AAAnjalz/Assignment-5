@@ -1,4 +1,16 @@
-//Start from isEmpty;
+/*
+ * CoffeeShopSimulator.java
+ *
+ * COMP 1020 SECTION A01
+ * INSTRUCTOR    Lauren Himbeault
+ * ASSIGNMENT    Assignment 4
+ * @author       Anjal Adhikari, 008031539
+ * @version      2025/03/24
+ * 
+ * Purpose: The program uses a stack-based approach to explore the cave. It starts from a given location, explores in all directions 
+ * (up, down, left, right), and marks the path taken. If the treasure is found, it marks the path to the treasure with dots (.). If no 
+ * path to the treasure is found, it reports that the treasure is unreachable.The stack is implemented using a linked list based structure.
+ */
 import java.util.ArrayList;
 
 public class CaveExplorer {

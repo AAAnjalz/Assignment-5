@@ -1,3 +1,15 @@
+/*
+ * CarWashManager.java
+ *
+ * COMP 1020 SECTION A01
+ * INSTRUCTOR    Lauren Himbeault
+ * ASSIGNMENT    Assignment 4
+ * @author       Anjal Adhikari, 008031539
+ * @version      2025/03/24
+ * 
+ * Purpose: This manages queue of cars that are either serviced or are remaining to be serviced .There are two queue, waiting and serviced.
+ * Queue are priority based.
+ */
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -115,7 +127,8 @@ class Car implements Comparable<Car>{
   }
 
   @Override
-  public int compareTo(Car o) {
+  //It compares car based on their proirity, if they have same priority it compares accorind to model. 
+  public int compareTo(Car o) { 
     if (this.getPriority() > o.getPriority()) {
         return -1;
     } else if (this.getPriority() < o.getPriority()) {
@@ -205,6 +218,7 @@ interface QueueOfCars  {
 
   //TODO: Implement your CarQueueLinkedList 
 
+  //Implementation of linkedlist.
    class LinkedList{
     Node top;
     int size;
@@ -265,12 +279,13 @@ interface QueueOfCars  {
         while (curr != null) {
             Node maxNode = curr;
             Node searchNode = curr.next;
-    
+          
+            //Searches for max priority car and sorts in that orde.
             while (searchNode != null) {
                 if (searchNode.carData.getPriority() > maxNode.carData.getPriority() ||
                    (searchNode.carData.getPriority() == maxNode.carData.getPriority() &&
                     searchNode.carData.getModel().compareTo(maxNode.carData.getModel()) < 0)) {
-                    maxNode = searchNode;
+                    maxNode = searchNode; 
                 }
                 searchNode = searchNode.next;
             }
@@ -306,6 +321,7 @@ interface QueueOfCars  {
 
 }
 
+//Implementation of CarQueueLinkedList with same function as arraylist.
  class CarQueueLinkedList implements QueueOfCars{
   private LinkedList queue;
 
@@ -338,7 +354,7 @@ interface QueueOfCars  {
     }
     return notification;
   }
-    
+   
   private Car find(String model) {
     Car result = null;
     int pos = 0;
@@ -361,16 +377,16 @@ interface QueueOfCars  {
 }
 
     public String toString() {
-    String result = "Here are the cars and their priority: \n";
+    String result = "Here are the cars and their priority:\n";
     for (int i = 0; i < this.queue.size(); i++) {
-      result += this.queue.get(i) + "\n";
-      // if (i < this.queue.size() - 1){
-      //   result += "\n";
-      // }
+      result += this.queue.get(i);
+      if (i < this.queue.size() - 1){
+        result += "\n";
+      }
       // result += "\n";
   
     }
-    return result;
+    return "\n" + result;
   }
 
 }
